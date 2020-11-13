@@ -1,0 +1,385 @@
+Problem 1: 
+Check number
+Given an integer n, find if n is positive, negative or 0.
+If n is positive, print "Positive"
+If n is negative, print "Negative"
+And if n is equal to 0, print "Zero".
+
+Input Format :
+Integer n
+
+Output Format :
+"Positive" or "Negative" or "Zero" (without double quotes)
+
+Constraints :
+1 <= n <= 100
+
+Sample Input 1 :
+10
+
+Sample Output 1 :
+Positive
+
+Sample Input 2 :
+-10
+
+Sample Output 2 :
+Negative
+
+Soln: 
+a=int(input())
+if a>0:
+    print("Positive")
+elif (a==0):
+    print("Zero")
+else:
+    print("Negative")
+    
+    
+Problem2: 
+Sum of n numbers
+Given an integer n, find and print the sum of numbers from 1 to n.
+Note : Use while loop only.
+
+Input Format :
+Integer n
+
+Output Format :
+Sum
+
+Constraints :
+1 <= n <= 100
+
+Sample Input :
+10
+
+Sample Output :
+55
+Soln:
+# Read input as sepcified in the question
+# Print output as specified in the question
+num=int(input())
+if num < 0:
+   print("Enter a positive number")
+else:
+   sum = 0
+   # use while loop to iterate until zero
+   while(num > 0):
+       sum += num
+       num -= 1
+   print(sum)
+
+
+Problem3: 
+Sum of Even Numbers
+
+Given a number N, print sum of all even numbers from 1 to N.
+Input Format :
+Integer N
+Output Format :
+Required Sum 
+Sample Input 1 :
+ 6
+Sample Output 1 :
+12
+Soln:
+## Read input as specified in the question.
+## Print output as specified in the question.
+num=int(input())
+if num < 1:
+   print("Enter a positive number")
+else:
+   sum = 0
+   # use while loop to iterate until zero
+   while(num > 0):
+       if ((num %2)==0 ):
+         sum += num
+       num -=1 
+   print(sum)
+
+
+Problem4:
+Fahrenheit to Celsius
+Send Feedback
+Given three values - Start Fahrenheit Value (S), End Fahrenheit value (E) and Step Size (W), you need to convert all Fahrenheit values from Start to End at the gap of W, into their corresponding Celsius values and print the table.
+Input Format :
+3 integers - S, E and W respectively 
+Output Format :
+Fahrenheit to Celsius conversion table. One line for every Fahrenheit and corresponding Celsius value. On Fahrenheit value and its corresponding Celsius value should be separate by tab ("\t")
+Constraints :
+0 <= S <= 80
+S <= E <=  900
+0 <= W <= 40 
+Sample Input 1:
+0 
+100 
+20
+Sample Output 1:
+0   -17
+20  -6
+40  4
+60  15
+80  26
+100 37
+Sample Input 2:
+20
+119
+13
+Sample Output 2:
+20  -6
+33  0 
+46  7
+59  15
+72  22
+85  29
+98  36
+111 43
+Explanation For Input 2:
+We need need to start calculating the Celsius values for each of the Fahrenheit Value which starts from 20. So starting from 20 which is the given Fahrenheit 
+start value, we need to compute its corresponding Celsius value which computes to -6. We print this information as <Fahrenheit Value> a tab space"\t"
+<Celsius Value> on each line for each step of 13 we take to get the next value of Fahrenheit and extend this idea till we reach the end that is till 119 
+in this case. You may or may not exactly land on the end value depending on the steps you are taking.
+
+Soln
+# Read input as sepcified in the question
+# Print output as specified in the question
+
+## Note : For printing multiple values in one line, put them inside print separated by space.
+## You can follow this syntax for printing values of two variables val1 and val2 separaetd by space -
+##      print(val1, " ", val2)
+s=int(input())
+e=int(input())
+w=int(input())
+if 0 <= s <= 80:
+    if s <= e <= 900:
+        if 0 <= w <= 40:
+            while e>=s:
+                c = int((s-32)/1.8)
+                print(s," ",c)
+                s=s+w
+
+Problem5:
+Calculator
+
+Write a program that performs the tasks of a simple calculator. The program should first take an integer as input and then based on that integer perform the task as given below.
+1. If the input is 1, 2 integers are taken from the user and their sum is printed.
+2. If the input is 2, 2 integers are taken from the user and their difference(1st number - 2nd number) is printed.
+3. If the input is 3, 2 integers are taken from the user and their product is printed.
+4. If the input is 4, 2 integers are taken from the user and the quotient obtained (on dividing 1st number by 2nd number) is printed.
+5. If the input is 5, 2 integers are taken from the user and their remainder(1st number mod 2nd number) is printed.
+6. If the input is 6, the program exits.
+7. For any other input, print "Invalid Operation".
+Note: Each answer in next line.
+Input format:
+Take integers as input, in accordance to the description of the question. 
+Constraints:
+Time Limit: 1 second
+Output format:
+The output lines must be as prescribed in the description of the question.
+Sample Input:
+3
+1
+2
+4
+4
+2
+1
+3
+2
+7
+6
+Sample Output:
+2
+2
+5
+Invalid Operation
+
+Soln:
+# Write your code here
+type1 = int(input())
+while type1 != 6:
+    if type1<=5 and type1>=1:
+       num1 = int(input())
+       num2 = int(input())
+    if type1 == 1:
+            print(num1 + num2)
+    if type1 == 2:
+            print(num1 - num2)
+    if type1 == 3:
+            print(num1 * num2)
+    if type1 == 4:
+            print(num1 // num2)
+    if type1 == 5:
+            print(num1 % num2)
+     
+    elif type1 < 1 or type1>6:
+       print("Invalid Operation")
+    type1 = int(input())
+
+
+Problem 6:
+Reverse of a number
+
+Write a program to generate the reverse of a given number N. Print the corresponding reverse number.
+Note : If a number has trailing zeros, then its reverse will not include them. For e.g., reverse of 10400 will be 401 instead of 00401.
+
+
+Input format :
+Integer N
+Output format :
+Corresponding reverse number
+Constraints:
+0 <= N < 10^8
+Sample Input 1 :
+1234
+Sample Output 1 :
+4321
+Sample Input 2 :
+1980
+Sample Output 2 :
+891
+
+Soln
+def reverse(n):
+  test_num = 0
+  while (n > 0):
+    remainder = n % 10
+    test_num = (test_num * 10) + remainder
+    n = n // 10
+  return(format(test_num))
+	
+
+n=int(input())
+result = reverse(n)
+print(result)
+
+Problem 7 :
+Palindrome number
+
+Write a program to determine if given number is palindrome or not. Print true if it is palindrome, false otherwise.
+Palindrome are the numbers for which reverse is exactly same as the original one. For eg. 121
+Sample Input 1 :
+121
+Sample Output 1 :
+true
+Sample Input 2 :
+1032
+Sample Output 2 :
+false
+
+Soln:
+
+def checkPalindrome(num):
+    temp = num
+    rev = 0
+    while (num > 0):
+        dig = num % 10
+        rev = rev * 10 + dig
+        num = num // 10
+    if temp == rev:
+        f = True
+    else:
+        f= False
+    return f
+
+
+num = int(input())
+isPalindrome = checkPalindrome(num)
+if (isPalindrome):
+    print('true')
+else:
+    print('false')
+
+
+Problem 8 :
+Sum of even & odd
+Send Feedback
+Write a program to input an integer N and print the sum of all its even digits and sum of all its odd digits separately.
+Digits mean numbers, not the places! That is, if the given integer is "13245", even digits are 2 & 4 and odd digits are 1, 3 & 5.
+Input format :
+ Integer N
+Output format :
+Sum_of_Even_Digits Sum_of_Odd_Digits
+(Print first even sum and then odd sum separated by space)
+Constraints
+0 <= N <= 10^8
+Sample Input 1:
+1234
+Sample Output 1:
+6 4
+Sample Input 2:
+552245
+Sample Output 2:
+8 15
+Explanation for Input 2:
+For the given input, the even digits are 2, 2 and 4 and if we take the sum of these digits 
+it will come out to be 8(2 + 2 + 4) and similarly, if we look at the odd digits, they are, 5, 5 and 5
+which makes a sum of 15(5 + 5 + 5). Hence the answer would be, 8(evenSum) <single space> 15(oddSum)
+
+Soln
+
+## Note : For printing multiple values in one line, put them inside print separated by space.
+## You can follow this syntax for printing values of two variables val1 and val2 separaetd by space -
+## print(val1, " ", val2)
+
+n=int(input())
+
+sumOdd = 0
+sumEven = 0
+while n != 0:
+    d = n % 10
+    if d%2 != 0:
+        sumOdd += d 
+    else:
+        sumEven += d
+    n =n // 10
+    
+print(sumEven,"",sumOdd)
+
+Problem 9 :
+Nth Fibonacci number
+
+Nth term of fibonacci series F(n) is calculated using following formula -
+    F(n) = F(n-1) + F(n-2), 
+    Where, F(1) = F(2) = 1
+Provided N you have to find out the Nth Fibonacci Number.
+Input Format :
+Integer n
+Output Format :
+Nth Fibonacci term i.e. F(n)
+Constraints:
+1 <= n <= 25
+Sample Input 1:
+4
+Sample Output 2:
+3 
+Sample Input 1:
+6
+Sample Output 2:
+8
+
+Soln:
+## Read input as specified in the question.
+## Print output as specified in the question.
+
+
+    
+n= int(input())
+if n == 0:
+    print("0")
+elif n == 1:
+    print("1")
+    
+else:
+    first = 0
+    second = 1
+    i = 2
+    while i <= n:
+        ans = first + second
+        first  = second
+        second = ans
+        i+=1
+    print(ans)
+    
+
+
